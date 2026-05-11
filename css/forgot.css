@@ -1,0 +1,150 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* BODY */
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.45)
+    ),
+    url("../images/cafe.jpg") no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN CONTAINER */
+.Content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FORGOT CARD */
+.LoginForm {
+    width: 420px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 248, 235, 0.9);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.LoginForm:hover {
+    transform: translateY(-5px);
+}
+
+/* TITLE */
+.LoginForm h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #6b3e26;
+    margin-bottom: 10px;
+}
+
+/* INPUTS */
+.Usertype,
+.Passtype {
+    width: 100%;
+    height: 45px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid #b08968;
+    background: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.Usertype:focus,
+.Passtype:focus {
+    outline: none;
+    border-color: #6b3e26;
+    box-shadow: 0 0 6px rgba(107, 62, 38, 0.4);
+}
+
+/* BUTTON */
+.ForgetButton {
+    height: 45px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #af6a4a, #8b4513);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ForgetButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* LINKS */
+.login-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-link a {
+    color: #6b3e26;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* QUOTE BOX */
+.qoute {
+    margin-top: 40px;
+    padding: 20px 30px;
+    max-width: 600px;
+    background: rgba(210, 166, 121, 0.85);
+    border-radius: 15px;
+    border: 2px dashed #6b3e26;
+    font-size: 24px;
+    font-style: italic;
+    color: #3e2723;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* FOOTER */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(205, 150, 79, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-top: 2px solid #6b3e26;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+    .LoginForm {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .qoute {
+        font-size: 18px;
+    }
+}

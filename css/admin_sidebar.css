@@ -1,0 +1,328 @@
+/* ============================================
+   ADMIN SIDEBAR - MASTER STYLESHEET
+   Applied to all admin panel pages
+   DO NOT DUPLICATE THIS IN INDIVIDUAL PHP FILES
+   ============================================ */
+
+/* Base Styles */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0ebe3;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== SIDEBAR - STABLE DESIGN ===== */
+.sidebar {
+    width: 280px;
+    color: white;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+/* Sidebar gradients based on role */
+.sidebar.super-admin {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.sidebar.admin {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+}
+
+/* Brand Section */
+.brand {
+    padding: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.2);
+}
+
+.brand h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+}
+
+.brand h2.super-admin {
+    color: #D4AF37;
+}
+
+.brand h2.admin {
+    color: #e67e22;
+}
+
+.brand small {
+    color: #8b7355;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Profile Section */
+.profile-container {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.profile-pic.super-admin {
+    border-color: #D4AF37;
+}
+
+.profile-pic.admin {
+    border-color: #e67e22;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-pic .no-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.profile-pic .no-image.super-admin {
+    background: linear-gradient(135deg, #D4AF37, #B8941F);
+}
+
+.profile-pic .no-image.admin {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+.online-indicator {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #4CAF50;
+    border-radius: 50%;
+    border: 2px solid;
+    bottom: 2px;
+    right: 2px;
+}
+
+.online-indicator.super-admin {
+    border-color: #1a1a2e;
+}
+
+.online-indicator.admin {
+    border-color: #2c3e50;
+}
+
+.user-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.user-name {
+    font-weight: 600;
+    color: white;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.1rem;
+}
+
+.user-username {
+    font-size: 0.7rem;
+    color: #8b7355;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.1rem;
+}
+
+.user-email-full {
+    font-size: 0.65rem;
+    color: #8b7355;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.25rem;
+    word-break: break-word;
+    line-height: 1.3;
+}
+
+.user-email-full i {
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+}
+
+/* Navigation */
+.nav-section {
+    padding: 1rem 0;
+}
+
+.nav-header {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8b7355;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.nav-item {
+    padding: 0.875rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+    font-size: 1rem;
+}
+
+.nav-item i {
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Hover and active states based on role */
+.nav-item:hover, .nav-item.active {
+    background: rgba(0,0,0,0.2);
+}
+
+.sidebar.super-admin .nav-item:hover, 
+.sidebar.super-admin .nav-item.active {
+    background: rgba(212, 175, 55, 0.1);
+    color: #D4AF37;
+    border-left-color: #D4AF37;
+}
+
+.sidebar.admin .nav-item:hover, 
+.sidebar.admin .nav-item.active {
+    background: rgba(230, 126, 34, 0.1);
+    color: #e67e22;
+    border-left-color: #e67e22;
+}
+
+/* Role badge */
+.role-badge {
+    background: linear-gradient(135deg, #D4AF37, #B8941F);
+    color: #1a1a2e;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: auto;
+}
+
+.role-badge.admin {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    color: white;
+}
+
+/* Main Content - MUST match sidebar width */
+.main {
+    flex: 1;
+    margin-left: 280px;
+    padding: 2rem;
+    width: calc(100% - 280px);
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.main::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main::-webkit-scrollbar-track {
+    background: #f0ebe3;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background: #8b7355;
+    border-radius: 10px;
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+    background: #6d5a42;
+}
+
+/* Utility Classes */
+.text-gold { color: #D4AF37; }
+.text-orange { color: #e67e22; }
+.text-brown { color: #8B5A2B; }
+.bg-gold { background: #D4AF37; }
+.bg-orange { background: #e67e22; }
+.bg-brown { background: #8B5A2B; }
